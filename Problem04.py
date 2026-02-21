@@ -19,44 +19,6 @@ Constraints:
 1 <= s.length <= 1000
 s consist of only digits and English letters.
 """
-
-# class Solution:
-#     def longestPalindrome(self, s: str) -> str:
-#         import pdb; pdb.set_trace()
-#         if s==s[::-1]: 
-#             return s
-#         left = self.longestPalindrome(s[1:])
-#         right = self.longestPalindrome(s[:-1])
-
-#         if len(left)>len(right):
-#             return left
-#         else:
-#             return right
-
-# class Solution:
-#     def longestPalindrome(self, s: str) -> str:
-#         n = len(s)
-#         longest = ''
-        
-#         def check(left, right):
-#             while left >= 0 and right < n and s[left] == s[right]:
-#                 left -= 1
-#                 right += 1
-#             return s[left + 1:right]
-        
-#         for i in range(n):
-#             # Odd length palindromes
-#             odd_palindrome = check(i, i)
-#             if len(odd_palindrome) > len(longest):
-#                 longest = odd_palindrome
-            
-#             # Even length palindromes
-#             even_palindrome = check(i, i + 1)
-#             if len(even_palindrome) > len(longest):
-#                 longest = even_palindrome
-        
-#         return longest
-
 class Solution:
     def longestPalindrome(self, string):
         n = len(string)
