@@ -29,27 +29,36 @@ Explanation: The only possible triplet sums up to 0.
 
 class Solution:
     def threeSum(self, nums):
-        n=len(nums)-1
-        res= []
+        res = []
         nums.sort()
-        for i in range(n):
-            j = i+1
-            k = n 
-            if i>0 and nums[i] == nums[i-1]:
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i-1]:
                 continue
+            
+            j = i + 1
+            k = len(nums) - 1
+
             while j < k:
-                threesum = nums[i] + nums[j] + nums[k]
-                if  threesum > 0:
+                total = nums[i] + nums[j] + nums[k]
+
+                if total > 0:
                     k -= 1
-                elif threesum < 0:
+                elif total < 0:
                     j += 1
                 else:
-                    res.append([nums[i] , nums[j] , nums[k]])
-                    j +=1
-                    k -=1
-                    while j<k and nums[j-1] == nums[j]:
-                        j +=1
+                    t = [nums[i], nums[j], nums[k]]
+                    t.sort
+                    if t in res:
+                        continue
+                    else:
+                        res.append([nums[i], nums[j], nums[k]])
+                    j += 1
         return res
+                            
+
+obj = Solution()
+res = obj.threeSum([-1,0,1,2,-1,-4])
+print(res)
 
 obj = Solution()
 result=obj.threeSum([-1,0,1,2,-1,-4])
