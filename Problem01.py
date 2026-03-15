@@ -21,3 +21,19 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
 """
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        if (2 <= len(nums) <= 10**4):
+            ValueError("Nums Out of bound")
+        
+        if (-10**9 <= target <= 10**9):
+            ValueError("Target Out of bound")
+        num_index = {}
+        for i, val in enumerate(nums):
+            if target - val in num_index:
+                return [i, num_index[target - val]]
+            else:
+                num_index[val] = i
+            
+        else:
+            return []
