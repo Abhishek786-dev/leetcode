@@ -1,0 +1,7 @@
+Step 1: Key difference from combinations
+In combinations:
+
+Order doesn’t matter → [1,2] == [2,1]
+
+In permutations:
+Order matters → [1,2] ≠ [2,1]
